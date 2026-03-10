@@ -8,5 +8,115 @@
 </head>
 <body>
     <h1>Comming soon</h1>
+    <div id="quiz">
+
+
+        <h2>Take a small Quiz...</h2>
+        <button onclick="newQuestion()">Get New Question</button>
+        <p id="question">Click on the button above to get a Question</p>
+        
+        <div id="select">
+            <button id="option1" onclick="submitAnswer()">-</button>
+            <button id="option2" onclick="submitAnswer()">-</button>
+            <button id="option3" onclick="submitAnswer()">-</button>
+            <button id="option4" onclick="submitAnswer()">-</button>
+
+
+        </div>
+        <p id="answer"></p>
+
+
+
+    </div>
+
+    <script>
+
+const allQuestions = [
+
+  {
+    text: "How many people live in Germany?",
+    options: ["80M", "50M", "800M", "85M"],
+    correct: 3
+  },
+  {
+    text: "Whats the biggest country by land?",
+    options: ["China", "USA", "Russia", "Canada"],
+    correct: 2
+  },
+
+{
+ text: "Whats the biggest country by people?", 
+ options: ["China", "India", "Russia", "Germany"],
+ correct: 0
+},
+
+{
+ text: "Which country has the highest BIP?", 
+ options: ["Germany", "India", "America", "China"],
+ correct: 2
+},
+
+{
+ text: "Who is the richest Human?", 
+ options: ["Jeff Bezos", "Elon Musk", "Micheal Jackson", "Donald Trump"],
+ correct: 1
+}
+  ]
+
+
+
+
+
+
+function newQuestion() {
+
+
+let idx = Math.floor(Math.random() * allQuestions.length);
+const question = allQuestions[idx]
+
+
+
+ document.getElementById("question").innerHTML = question.text
+ document.getElementById("option1").innerHTML = question.options[0]
+ document.getElementById("option2").innerHTML = question.options[1]
+ document.getElementById("option3").innerHTML = question.options[2]
+ document.getElementById("option4").innerHTML = question.options[3]
+
+let correct = question.correct
+
+
+option1.onclick = function() {let choosed = 0; if (choosed === correct) {
+    document.getElementById("answer").innerHTML = "You are right"
+}
+else {document.getElementById("answer").innerHTML = "You are wrong"}
+}
+option2.onclick = function() {let choosed = 1; if (choosed === correct) {
+    document.getElementById("answer").innerHTML = "You are right"
+}
+else {document.getElementById("answer").innerHTML = "You are wrong"}
+}
+option3.onclick = function() {let choosed = 2; if (choosed === correct) {
+    document.getElementById("answer").innerHTML = "You are right"
+}
+else {document.getElementById("answer").innerHTML = "You are wrong"}
+}
+option4.onclick = function() {let choosed = 3;if (choosed === correct) {
+    document.getElementById("answer").innerHTML = "You are right"
+}
+else {document.getElementById("answer").innerHTML = "You are wrong"}
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+    </script>
 </body>
 </html>

@@ -16,10 +16,10 @@
         <p id="question">Click on the button above to get a Question</p>
         
         <div id="select">
-            <button id="option1" onclick="submitAnswer()">-</button>
-            <button id="option2" onclick="submitAnswer()">-</button>
-            <button id="option3" onclick="submitAnswer()">-</button>
-            <button id="option4" onclick="submitAnswer()">-</button>
+            <button id="option1">-</button>
+            <button id="option2">-</button>
+            <button id="option3">-</button>
+            <button id="option4">-</button>
 
 
         </div>
@@ -30,6 +30,13 @@
     </div>
 
     <script>
+
+const questionEl = document.getElementById("question");
+const answerEl = document.getElementById("answer");
+const option1 = document.getElementById("option1");
+const option2 = document.getElementById("option2");
+const option3 = document.getElementById("option3");
+const option4 = document.getElementById("option4");
 
 const allQuestions = [
 
@@ -69,12 +76,8 @@ const allQuestions = [
 
 
 function newQuestion() {
-
-
-let idx = Math.floor(Math.random() * allQuestions.length);
-const question = allQuestions[idx]
-
-
+  const idx = Math.floor(Math.random() * allQuestions.length);
+  const question = allQuestions[idx];
 
  document.getElementById("question").innerHTML = question.text
  document.getElementById("option1").innerHTML = question.options[0]
@@ -86,33 +89,37 @@ let correct = question.correct
 
 
 option1.onclick = function() {let choosed = 0; if (choosed === correct) {
-    document.getElementById("answer").innerHTML = "You are right"
+    document.getElementById("answer").innerHTML = "You are right"; option1.disabled = true; option2.disabled = true; option3.disabled = true; option4.disabled = true;
 }
-else {document.getElementById("answer").innerHTML = "You are wrong"}
+else {document.getElementById("answer").innerHTML = "You are wrong"; option1.disabled = true; option2.disabled = true; option3.disabled = true; option4.disabled = true;}
 }
 option2.onclick = function() {let choosed = 1; if (choosed === correct) {
-    document.getElementById("answer").innerHTML = "You are right"
+    document.getElementById("answer").innerHTML = "You are right"; option1.disabled = true; option2.disabled = true; option3.disabled = true; option4.disabled = true;
 }
-else {document.getElementById("answer").innerHTML = "You are wrong"}
+else {document.getElementById("answer").innerHTML = "You are wrong"; option1.disabled = true; option2.disabled = true; option3.disabled = true; option4.disabled = true;}
 }
 option3.onclick = function() {let choosed = 2; if (choosed === correct) {
-    document.getElementById("answer").innerHTML = "You are right"
+    document.getElementById("answer").innerHTML = "You are right"; option1.disabled = true; option2.disabled = true; option3.disabled = true; option4.disabled = true;
 }
-else {document.getElementById("answer").innerHTML = "You are wrong"}
+else {document.getElementById("answer").innerHTML = "You are wrong"; option1.disabled = true; option2.disabled = true; option3.disabled = true; option4.disabled = true;}
 }
 option4.onclick = function() {let choosed = 3;if (choosed === correct) {
-    document.getElementById("answer").innerHTML = "You are right"
+    document.getElementById("answer").innerHTML = "You are right"; option1.disabled = true; option2.disabled = true; option3.disabled = true; option4.disabled = true;
 }
-else {document.getElementById("answer").innerHTML = "You are wrong"}
-}
-
-
-
-
+else {document.getElementById("answer").innerHTML = "You are wrong"; option1.disabled = true; option2.disabled = true; option3.disabled = true; option4.disabled = true;}
 }
 
 
+if (option1.disabled) {
+  option1.style.backgroundColor = "blue";
+  option1.style.color = "blue"
+}
 
+
+}
+
+
+ 
 
 
 
